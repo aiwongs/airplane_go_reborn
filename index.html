@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<script type="text/javascript" src="libs/TweenMax.min.js"></script>
+		<script type="text/javascript" src="libs/three.min.js"></script>
+		<script type="text/javascript" src="game.js"></script>
+		<title>Airplane Go! Reborn.</title>
+		<!-- <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700italic' rel='stylesheet' type='text/css'> -->
+		<link rel="stylesheet" type="text/css" href="game.css" />
+		<style type="text/css">
+		*{
+		  margin:0;
+		  padding:0;
+		}
+
+
+		#credits {
+		  font-size: 12px;
+		  position: absolute;
+		  bottom: -25px;
+		  right: 15px;
+		  opacity: 0.6;
+		  color: #ffffff;
+		  max-width: 70%;
+		  text-align: right;
+		  line-height: 20px;
+		}
+		.logo {
+		  font-size: 12px;
+		  position: absolute;
+		  bottom: 80px;
+		  left: 25px;
+		  color: #ffffff;
+		  max-width: 70%;
+		  line-height: 20px;
+		  opacity: 0.7;
+		}
+
+		.iconlink{
+		  bottom: 50px;
+		  margin-right: 0px;
+		}
+		#img-path {
+		  display: none;
+		}
+
+	  </style>
+	</head>
+	<body>
+		<!-- <iframe src = "sounds/Strategy.mp3"  type="audio/mp3" allow="autoplay" id="audio" style="display: none"> </iframe> -->
+		<audio autoplay loop id = "backAudio" src="sounds/background.mp3"  type="audio/mp3"></audio>
+		<div class="mainClass" id="mainClass">
+
+			<!-- This part will contain the level and score -->
+			<div class = "rightSideParamters"><!-- This part will contain the stage and points -->
+				<div class="parameterDisplay" id="level">
+					<div class="parameterHeading">关卡</div>
+					<div class="displayStageAndBullets" id="currStage">1</div>
+					<svg class="stageBulletContainer" id="stageContainer" viewbox="0 0 200 200">
+						<circle id="stageContainerBgr" r="80" cx="100" cy="100" fill="none" stroke="#e6ac55" stroke-width="24px" />
+						<circle id="stageContainerStroke" r="80" cx="100" cy="100" fill="none" stroke="#2b0261" stroke-width="14px" stroke-dasharray="502" />
+					</svg>
+				</div>
+				<div class="parameterDisplay" id="dist">
+					<div class="parameterHeading">点数</div>
+					<div class="displayPoints" id="distValue">000</div>
+				</div>
+			</div>
+
+			<!-- This part will contain the health bar and number of bullets -->
+			<div class = "leftSideParameters"><!-- This part will contain the health meter and number of bullets -->
+				<div class="parameterDisplay" id="health">
+					<div class="parameterHeading">HP</div>
+					<div class="healthMeter" id="healthMeter">
+						<div class="healthMeterFill" id="healthMeterFill"></div>
+					</div>
+				</div>
+				<div class="parameterDisplay" id="bullets">
+					<div class="parameterHeading">弹药量</div>
+					<div class="displayStageAndBullets" id="bulletCount">2</div>
+					<svg class="stageBulletContainer" id="bulletContainer" viewbox="0 0 200 200">
+						<circle id="bulletContainerBgr" r="80" cx="100" cy="100" fill="none" stroke="#7d4d05" stroke-width="24px" />
+					</svg>
+				</div>
+			</div>
+
+	        <div class="gameNameHeading">  <!-- This part will contain game name -->
+				<top> </top>Airplane GO! Reborn.
+				<bottom>你能飞多远？</bottom>
+			</div>
+
+			<div class="mainScene" id="mainScene"></div>
+			<div class="clickToReplay" id="clickToReplayMsg">继续加油！挑战更高分数！</div>
+			<div class="clickToStart" id="clickToStartMsg">请按任意键开始游戏！</div>
+			<div class="howToPlay" id="howToPlayMsg">收集绿色宝石恢复你的HP值！<br><next>躲开陨石！<br><next></next></next>按X键开始射击！</next></next></div>
+			<div class="aiwongsCopyright" id="aiwongsCopyrightMsg"><br><br>Copyright &copy; 王氏软件 2006-2024. All rights reserved.</div>
+			
+		</div>
+	</body>
+</html>
